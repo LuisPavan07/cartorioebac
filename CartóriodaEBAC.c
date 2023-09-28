@@ -14,7 +14,7 @@ int registro()//função resposável pelo registro.
 	char cargo[500]; 
 	//final de criação de variaveis/string.
 	
-	printf("Digite o CPF que será cadastrado: ");//coletando informação do usuário.
+	printf("\tDigite o CPF que será cadastrado: ");//coletando informação do usuário.
 	scanf("%s",cpf);//salva o cpf do usuario/ %s se refere a string.
 	
 	strcpy(arquivo,cpf);//responsável por copiar os valores das string.
@@ -28,7 +28,7 @@ int registro()//função resposável pelo registro.
 	fprintf(file , ",");//separação entre as informações.
 	fclose(file);//fecha o arquivo.
 	
-	printf("Digite o NOME que será cadastrado: ");//mensagen de comunicação com o usuário.
+	printf("\tDigite o NOME que será cadastrado: ");//mensagen de comunicação com o usuário.
 	scanf("%s" , nome);//salva na variavel.
 	
 	file=fopen(arquivo , "a");//abre o arquivo e faz atualização.
@@ -39,7 +39,7 @@ int registro()//função resposável pelo registro.
 	fprintf(file , ",");
 	fclose(file);
 	
-	printf("Digite o SOBRENOME a ser cadastrado:");
+	printf("\tDigite o SOBRENOME a ser cadastrado:");
 	scanf("%s" , sobrenome);
 	
 	file=fopen(arquivo , "a");//atualização.
@@ -50,7 +50,7 @@ int registro()//função resposável pelo registro.
 	fprintf(file , ",");
 	fclose(file);
 	
-	printf("Digite o CARGO a ser cadastrado :");
+	printf("\tDigite o CARGO a ser cadastrado :");
 	scanf("%s" , cargo);
 	
 	file=fopen(arquivo , "a");//atualização.
@@ -72,7 +72,7 @@ int consultar()
 	char cpf[200];
 	char conteudo[500];
 	
-	printf("Digite o CPF a ser consultado: ");
+	printf("\tDigite o CPF a ser consultado: ");
 	scanf("%s" , cpf);
 	
 	FILE *file;//encontrar o arquivo.
@@ -136,6 +136,7 @@ int main()
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n");
+		printf("\t4 - Sair do sistema\n\n");
 		printf("opção: ");//fim do menu.
 		
    		
@@ -161,8 +162,12 @@ int main()
 			break;
 			
 			
-			
-			
+			case 4:
+			printf("\tObrigado por utilizar nosso sistema!\n");
+			return 0;
+			break;
+				
+				
 			default:
 			printf("Essa opção não existe.\n\n");//mensagen ao usuário.
 			system("pause");//pausa na tela para leitura.
